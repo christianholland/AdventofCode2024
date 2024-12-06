@@ -69,8 +69,8 @@ sum(mat == "X")
 mat <- construct_matrix(lines)
 n_row <- nrow(mat)
 n_col <- ncol(mat)
-n_loops <- 1591
-for (i in 103:n_row) {
+n_loops <- 0
+for (i in 1:n_row) {
   print(c("Row", i))
   for (j in 1:n_col) {
     curr_position <- unname(which(mat == "^", arr.ind = TRUE)[1, ])
@@ -85,7 +85,7 @@ for (i in 103:n_row) {
     while (!is_outside(curr_position)) {
       element_hash <- digest(
         paste(curr_position[1], curr_position[2], curr_direction, sep = "_")
-        )
+      )
 
       if (exists(element_hash, envir = hash_table)) {
         n_loops <- n_loops + 1
