@@ -59,4 +59,4 @@ are_equations_valid_2 <- pmap_lgl(
   is_equation_valid,
   operators = c("+", "*", "||")
 )
-sum(df[are_equations_valid_2, ]$result)
+as.character(sum(df[are_equations_valid_2, ]$result))
